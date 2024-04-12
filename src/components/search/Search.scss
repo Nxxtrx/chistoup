@@ -1,0 +1,32 @@
+.search {
+  display: flex;
+  &__label {
+    border: 1px solid var(--color-light-grey);
+    border-radius: 4px 0 0 4px;
+    padding: 11px 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  &__input {
+    border: none;
+    color: var(--color-grey);
+    line-height: 1.43;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: var(--color-grey);
+    }
+  }
+
+  &__btn-submit {
+    border-radius: 0 4px 4px 0;
+    padding: 0px 14px;
+    background-color: var(--color-dark-grey);
+    color: var(--color-white);
+  }
+}

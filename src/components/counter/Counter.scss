@@ -1,0 +1,17 @@
+.counter {
+  background-color: var(--color-red);
+  border-radius: 4px;
+  max-width: 84px;
+  padding-inline: 8px;
+  color: var(--color-white);
+  text-align: center;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  height: 24px;
+
+  &__text {
+    font-size: 13px;
+    line-height: 1.23;
+  }
+}

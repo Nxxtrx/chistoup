@@ -1,0 +1,36 @@
+.pagination {
+  &__list {
+    display: flex;
+    gap: 12px;
+    margin: 28px 0 20px 20px;
+  }
+
+  &__page{
+    padding: 10px 15px;
+    border-radius: 6px;
+    border: 1px solid #fff;
+
+    &_type_active{
+      border-color: #a85757;
+
+      .pagination__page-btn{
+        color: #a85757;
+      }
+    }
+  }
+
+  &__page-btn{
+    font-weight: 500;
+    line-height: 1.42;
+    color: #4f4d55
+  }
+
+  &__next-btn {
+    padding: 11px;
+
+    img {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
