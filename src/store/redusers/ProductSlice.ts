@@ -14,7 +14,16 @@ export const ProductSlice = createSlice({
   name: 'product',
   initialState,
   reducers:{
-    
+    addNewProduct(state, action) {
+      state.product.push(action.payload)
+    },
+
+    editProduct(state, action) {
+      const index = state.product.findIndex(item => item.id === action.payload.id);
+      if (index !== -1) {
+        state.product[index] = { ...state.product[index], ...action.payload };
+      }
+    }
   },
   extraReducers: (builder) => {
     builder
@@ -24,7 +33,7 @@ export const ProductSlice = createSlice({
   }
 })
 
-export const {} = ProductSlice.actions;
+export const {addNewProduct, editProduct} = ProductSlice.actions;
 
 export default ProductSlice.reducer
 

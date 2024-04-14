@@ -1,17 +1,17 @@
 .dropdown{
   &__label{
     line-height: 1.42;
-    color: #514a4a;
+    color: var(--color-dark-grey);
     margin-right: 13px;
   }
 
   &__select{
     border-radius: 6px;
-    background-color: #514A4A;
+    background-color: var(--color-dark-grey);
     height: 40px;
     line-height: 1.42857;
     letter-spacing: 0em;
-    color: #fff;
+    color: var(--color-white);
     padding-left: 16px;
     padding-right: 44px;
     -webkit-appearance: none; /* Скрыть стрелку в Safari/Chrome */

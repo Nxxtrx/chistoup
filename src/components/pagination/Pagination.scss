@@ -11,10 +11,10 @@
     border: 1px solid #fff;
 
     &_type_active{
-      border-color: #a85757;
+      border-color: var(--color-red);
 
       .pagination__page-btn{
-        color: #a85757;
+        color: var(--color-red);
       }
     }
   }
@@ -22,7 +22,7 @@
   &__page-btn{
     font-weight: 500;
     line-height: 1.42;
-    color: #4f4d55
+    color: var(--color-pagination);
   }
 
   &__next-btn {

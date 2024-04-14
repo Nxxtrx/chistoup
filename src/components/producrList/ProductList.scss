@@ -4,15 +4,35 @@
   &__table {
     width: 100%;
     th {
-      background-color: #f6f4f4;
+      background-color: var(--color-white-dark);
       text-align: left;
       font-weight: 600;
       font-size: 13px;
       line-height: 1.23;
-      color: #514a4a;
+      color: var(--color-dark-grey);
       padding-block: 14px;
       padding-left: 28px;
       width: 357px;
+
+      .product__sort {
+        background-image: url('../../utils/images/line.svg');
+        width: 10px;
+        height: 10px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin-left: 10px;
+      }
+
+      .product__sort_type_ask{
+        background-image: url('../../utils/images/arrow-black.svg');
+        transform: rotate(180deg);
+      }
+
+      .product__sort_type_desc{
+        background-image: url('../../utils/images/arrow-black.svg');
+        
+      }
 
       &:last-child {
         width: 80px;

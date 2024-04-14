@@ -8,19 +8,22 @@ import './ProductList.scss'
 interface ProductListProps {
   productList: IProduct[]
   itemsPerPage: string,
+  currentPage: number,
+  sort: string,
   setItemsPerPage: (itemsPerPage:string) => void;
   onPageChange: (pageNumber: number) => void, 
-  currentPage: number,
+  handlePopupOpened: (title:string, data: IProduct) => void,
+  toggleSortOrder: () => void,
 }
 
-const ProductList: FC<ProductListProps> = ({productList, itemsPerPage, setItemsPerPage, onPageChange, currentPage}) => {
+const ProductList: FC<ProductListProps> = ({productList, itemsPerPage, setItemsPerPage, onPageChange, currentPage, handlePopupOpened, toggleSortOrder, sort}) => {
 
   return (
     <section className='products'>
       <table className='products__table'>
         <thead>
           <tr>
-            <th>Название</th>
+            <th>Название<button onClick={toggleSortOrder} className={`product__sort ${sort === 'ASC' && 'product__sort_type_ask'} ${sort === 'DESC' && 'product__sort_type_desc'}`}></button></th>
             <th>Единица измерения</th>
             <th>Артикул/код</th>
             <th></th>
@@ -28,16 +31,16 @@ const ProductList: FC<ProductListProps> = ({productList, itemsPerPage, setItemsP
         </thead>
         <tbody>
           {productList.map(product => (
-            <tr>
-            <td>{product.name}</td>
-            <td>шт</td>
-            <td>{product.code ? `#${product.code}` : '-'}</td>
-            <td className='products__row_type_btn'>
-              <button className='products__change-btn'>
-                <img src={editProductBtnIcon} alt="" />
-              </button>
-            </td>
-          </tr>
+            <tr key={product.id}>
+              <td>{product.name}</td>
+              <td>{product.measurement_units ? `${product.measurement_units}` : '-'}</td>
+              <td>{product.code ? `#${product.code}` : '-'}</td>
+              <td className='products__row_type_btn'>
+                <button onClick={() => handlePopupOpened(product.name, product)} className='products__change-btn'>
+                  <img src={editProductBtnIcon} alt="" />
+                </button>
+              </td>
+            </tr>
           ))}
         </tbody>
       </table>
